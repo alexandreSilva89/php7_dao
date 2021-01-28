@@ -7,13 +7,31 @@
 </head>
 <body>
     <?php
-        require_once "config.php";
+    
+    require_once "config.php";
 
-        $sql = new Conexao();
+    /* Carrega um usuario
+        $newuser = new Usuario();
+        $newuser->loadById(2);
+        echo $newuser;
+    */
+   //carrega uma lista de usuarios
 
-        $usuarios = $sql->select("SELECT * FROM usuarios");
+   /*
+   $listando = Usuario::getList();
+   echo json_encode($listando);
+*/
 
-        echo json_encode($usuarios);
+//Carrega uma lista de usuarios pesquisando pelo login
+
+//$search = Usuario::search('jo');
+//echo json_encode($search);
+
+$usuario = new Usuario();
+$usuario->login("alexandre", "1234");
+
+echo $usuario;
+
     ?>
 </body>
 </html>
